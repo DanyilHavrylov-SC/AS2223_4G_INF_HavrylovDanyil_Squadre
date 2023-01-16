@@ -16,6 +16,9 @@ namespace Library
         public Player(string name, string surname, ERole role)
         {
             // TODO P.1
+            this.name = name;
+            this.surname = surname;
+            this.role = role;
         }
 
         public string Description()

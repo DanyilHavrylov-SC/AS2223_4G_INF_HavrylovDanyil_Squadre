@@ -99,7 +99,11 @@ namespace Library
             foreach(Player player in players)
             {
                 ris += $"{player.Description()}";
-                if (i != players.Count()) ris += ", \n" ;
+                if (i <= players.Count())
+                {
+                    ris += ", \n";
+                    i++;
+                }
             }
             return ris;
         }

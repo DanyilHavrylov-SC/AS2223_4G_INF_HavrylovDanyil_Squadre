@@ -17,7 +17,7 @@
   <Class Name="Library.Team">
     <Position X="2.5" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAgACAAAAAAAAAAAAAAAAQAAAAEAAAAIAgAAAAAIAA=</HashCode>
+      <HashCode>AAAgACAAAAAAAAAAABAAAASAIAAEAAAAIAgAAAAAMAA=</HashCode>
       <FileName>Team.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>

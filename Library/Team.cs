@@ -9,6 +9,8 @@ namespace Library
     public class Team
     {
         string name;
+        int rosaPlayers = 0;
+        int riservaPlayers = 0;
 
         /// <summary>
         /// List of players of the Team
@@ -43,6 +45,26 @@ namespace Library
         public bool AddPlayer(Player player)
         {
             // TODO T.2
+            switch (player.Role)
+            {
+                case Player.ERole.Rosa:
+                    if (rosaPlayers <= MAX_ROSA_PLAYERS) 
+                    {
+                        players.Add(player);
+                        rosaPlayers++;
+                        return true;
+                    }
+                    else return false;
+                case Player.ERole.Riserva:
+                    if (riservaPlayers <= MAX_RISERVA_PLAYERS)
+                    {
+                        players.Add(player);
+                        riservaPlayers++;
+                        return true;
+                    }
+                    else return false;
+                default: return false;
+            }
         }
 
         /// <summary>
@@ -55,6 +77,14 @@ namespace Library
         public bool AddCaptain(Player captain)
         {
             // TODO T.3
+            if (captain.Role == Player.ERole.Rosa)
+            {
+                players.Add(captain);
+                rosaPlayers++;
+                return true;
+            }
+            else return false;
+            
         }
 
         /// <summary>
@@ -64,6 +94,14 @@ namespace Library
         public string GetPlayers()
         {
             // TODO T.4
+            string ris = "";
+            int i = 0;
+            foreach(Player player in players)
+            {
+                ris += $"{player.Description()}";
+                if (i != players.Count()) ris += ", \n" ;
+            }
+            return ris;
         }
 
         public string Name { get { return name; } }

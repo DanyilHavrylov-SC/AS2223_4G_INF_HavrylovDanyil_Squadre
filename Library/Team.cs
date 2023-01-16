@@ -77,7 +77,7 @@ namespace Library
         public bool AddCaptain(Player captain)
         {
             // TODO T.3
-            if (captain.Role == Player.ERole.Rosa)
+            if (captain.Role == Player.ERole.Rosa && rosaPlayers <= MAX_ROSA_PLAYERS)
             {
                 players.Add(captain);
                 rosaPlayers++;
